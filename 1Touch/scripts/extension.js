@@ -95,41 +95,49 @@ function like() { // 추천 ♡♡♡
 	}
         else if ( result == 'nologin' )
         {
-                    alert ( ' 로그인 후 이용해주세요. ') ;
-                    location.href = "" ;
+                    alertMX ( ' 로그인 후 이용해주세요. ') ;
         }
         else if ( result == 'snslogin' )
         {
-                    alert ( ' SNS 가입회원은 사용이 제한됩니다. ') ;
+                    alertMX ( ' SNS 가입회원은 사용이 제한됩니다. ') ;
         }
         else if ( result == 'reallogin' )
         {
-                    alert ( ' 실명인증 후 이용해주세요. ') ;
+                    alertMX ( ' 실명인증 후 이용해주세요. ') ;
         }
         else if ( result == 'duplicate' )
         {
-                    alert( ' 이미 추천하셨습니다. ' ) ;
+                    alertMX( ' 이미 추천하셨습니다. ' ) ;
         }
         else if ( result == 'self' )
         {
-                    alert ( ' 본인의 글은 추천하실 수 없습니다. ') ;
+                    alertMX ( ' 본인의 글은 추천하실 수 없습니다. ') ;
         }
         else if ( result == 'notfound' )
         {
-                    alert ( ' 존재하지 않는 게시물입니다. ') ;
+                    alertMX ( ' 존재하지 않는 게시물입니다. ') ;
         }
         else if ( result == 'permission' )
         {
-                    alert ( ' 권한이 없습니다. ') ;
+                    alertMX ( ' 권한이 없습니다. ') ;
         }
         else if ( result == 'lowlevel' )
         {
-                    alert( ' 회원 가입 후 30일이 지나야 이용가능합니다. ' ) ;
+                    alertMX( ' 회원 가입 후 30일이 지나야 이용가능합니다. ' ) ;
         }
         else
         {
-                    alert( ' 오류가 발생하였습니다. 다시 시도해주세요. ' ) ;
-        }
+                    alertMX( ' 오류가 발생하였습니다. 다시 시도해주세요. ' ) ;
+        }
+
       }
   }
 }
+
+$("<style type='text/css'>#boxMX{display:none;background: #ffeeee;padding: 10px;border: 2px solid #aaa;float: left;font-size: 0.7em;position: fixed;top: 50%; left: 50%;z-index: 99999;box-shadow: 0px 0px 20px #999; -moz-box-shadow: 0px 0px 20px #999; -webkit-box-shadow: 0px 0px 20px #999; border-radius:6px 6px 6px 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px; font:12px Arial, Helvetica, sans-serif; padding:6px 6px 4px;width:200px; color: #a33;}</style>").appendTo("head");
+
+function alertMX(t){
+$( "body" ).append( $( "<div id='boxMX'><p class='msgMX'></p><p><center>CLOSE</center></p></div>" ) );
+$('.msgMX').text(t); var popMargTop = ($('#boxMX').height() + 24) / 2, popMargLeft = ($('#boxMX').width() + 10) / 2; 
+$('#boxMX').css({ 'margin-top' : -popMargTop,'margin-left' : -popMargLeft}).fadeIn(600);
+$("#boxMX").click(function() { $(this).remove(); });  };

@@ -95,7 +95,7 @@ function like() { // 추천 ♡♡♡
       		chrome.tabs.sendMessage(tabs[0].id, {data: 'refresh'}, function(response) {
       		});
     	    });
-
+		alertMX ( ' 추천♡ 하였습니다. ') ;
 	}
         else if ( result == 'nologin' )
         {

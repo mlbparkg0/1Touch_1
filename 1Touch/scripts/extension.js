@@ -44,8 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
    		for(var i = 0;i < matches.length;i++){
 			// 개별 링크에서 유툽 비디오 아이디 추출
 			var id = matches[i].substring(matches[i].indexOf('embed')+6, matches[i].indexOf("\"><"))+','
-			if (id.indexOf('?list')>=0) {
-				id = id.substring(0,id.indexOf('?list'))+','
+			if (id.indexOf('?')>=0) { // remove any other youtube parameters passed
+				id = id.substring(0,id.indexOf('?'))+','
 			}
 			oneLink += id;
    		}
